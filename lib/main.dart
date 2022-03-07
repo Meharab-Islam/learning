@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pr2/designs/drawers.dart';
-import 'package:pr2/designs/main_page_image.dart';
-import 'package:pr2/screens/all_screen.dart';
+import 'package:pr/designs/drawers.dart';
+import 'package:pr/designs/main_page_image.dart';
+import 'package:pr/screens/Homepage.dart';
+import 'package:pr/screens/all_screen.dart';
+import 'package:pr/screens/note_add_Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -66,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
           bottom: TabBar(
             padding: EdgeInsets.all(7),
-            isScrollable: true,
+            // isScrollable: true,
             labelColor: Color(0xFF343434),
             indicator: BoxDecoration(
               border: Border.all(color: Colors.blue),
@@ -93,16 +95,21 @@ class _MyHomePageState extends State<MyHomePage> {
         body: TabBarView(
           children: [
             All_Screen(),
-            Center(
-              child: Text('Home'),
-            ),
+            Home_Screen(),
             Center(
               child: Text('work'),
             ),
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => NoteAddScreen(),
+              ),
+            );
+          },
           child: Container(
             height: 60,
             width: 60,

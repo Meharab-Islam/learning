@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pr2/designs/main_page_image.dart';
+import 'package:pr/designs/main_page_image.dart';
 
 class All_Screen extends StatefulWidget {
   const All_Screen({Key? key}) : super(key: key);
